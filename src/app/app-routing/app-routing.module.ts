@@ -4,7 +4,7 @@ import { Routes , RouterModule, ExtraOptions } from '@angular/router';
 import { LandingComponent } from '../landing/landing.component';
 
 const routerOptions: ExtraOptions = {
-  useHash: true,
+  useHash: false,
   anchorScrolling: 'enabled'
 };
 
