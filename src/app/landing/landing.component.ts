@@ -8,8 +8,9 @@ import { TestServiceService } from '../services/test-service.service';
 })
 export class LandingComponent implements OnInit {
 
-  constructor(private testSvc: TestServiceService) { }
+  constructor(public testSvc: TestServiceService) { }
   name: string;
+  public states: any;
 
   ngOnInit() {
     this.name = this.testSvc.TestValue;

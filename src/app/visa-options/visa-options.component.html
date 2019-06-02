@@ -1,3 +1,18 @@
-<p>
-  visa-options works!
-</p>
+<div class="container">
+  <div class="row">
+   <div class="col-md-4 form-group">
+     <select [(ngModel)]="selectedState" class="form-control" (change)="stateChanged()">
+       <option *ngFor="let s of states" [ngValue]="s.id" >
+         {{s.name}}
+       </option>
+     </select>
+   </div>
+
+   <div class="col-md-4 form-group">
+     <select class="form-control">
+       <option *ngFor="let vo of relatedVisaCategories">{{vo.name}} </option>
+     </select>
+   </div>
+  </div>
+  {{selectedState}}
+</div>

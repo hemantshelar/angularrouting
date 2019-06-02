@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TestServiceService } from '../services/test-service.service';
 
 @Component({
   selector: 'app-visa-options',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VisaOptionsComponent implements OnInit {
 
-  constructor() { }
+  selectedState: any;
+  selectedVisa: any;
+  states: any;
+  relatedVisaCategories: any;
+  constructor(private testSvc: TestServiceService) { }
 
   ngOnInit() {
+    this.states = this.testSvc.States;
+    console.error(this.states);
   }
 
+  stateChanged() {
+    this.relatedVisaCategories = undefined;
+    const id = this.selectedState;
+    this.relatedVisaCategories = this.testSvc.getVisaCategories(id);
+    console.log(this.relatedVisaCategories);
+  }
 }
