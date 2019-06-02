@@ -16,3 +16,23 @@
   </div>
   {{selectedState}}
 </div>
+
+<div class="row">
+  <form [formGroup]="question">
+    <input type="text" formControlName="firstName">
+    <input type="text" formControlName="lastName">
+
+    <div formArrayName="aliases">
+      <h3>Aliases</h3>
+      <div *ngFor="let c of aliases.controls;let i = index">
+        <input type="text" [formControlName]="i" >
+      </div>
+    </div>
+    <a (click)="addAliase()" class="btn btn-success">Add Aliase</a>
+  </form>
+
+
+  {{question.value | json}}
+
+
+</div>
