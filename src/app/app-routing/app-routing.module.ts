@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes , RouterModule, ExtraOptions } from '@angular/router';
 import { LandingComponent } from '../landing/landing.component';
 import { ContactComponent } from '../contact/contact.component';
+import { VisaOptionsComponent } from '../visa-options/visa-options.component';
 
 const routerOptions: ExtraOptions = {
   useHash: false,
@@ -12,8 +13,8 @@ const routerOptions: ExtraOptions = {
 const routes: Routes = [
   { path: '' , component: LandingComponent},
   { path: 'home' , component: LandingComponent},
-  { path: 'contact', component: ContactComponent}
-
+  { path: 'contact', component: ContactComponent} ,
+  { path: 'visaoptions', component: VisaOptionsComponent}
 ];
 
 @NgModule({

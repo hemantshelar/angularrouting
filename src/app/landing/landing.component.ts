@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TestServiceService } from '../services/test-service.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private testSvc: TestServiceService) { }
+  name: string;
 
   ngOnInit() {
+    this.name = this.testSvc.TestValue;
   }
 
+  setTestValue(): void {
+    this.testSvc.TestValue = this.name;
+  }
 }

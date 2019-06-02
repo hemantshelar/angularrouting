@@ -14,6 +14,10 @@
 
 <main id="main">
 
+  <input type="text" [(ngModel)]="name">
+  {{name}}
+
+  <a class="btn btn-success" (click)="setTestValue()">Set Value</a>
   <!--==========================
       About Section
     ============================-->
@@ -495,11 +499,8 @@
                 <button type="submit" class="btn btn-primary pull-right">Send</button><br />
               </form>
             </div>
-
           </div>
         </div>
-
-
       </div>
     </div>
 
